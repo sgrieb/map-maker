@@ -12,3 +12,8 @@ To run it:
 ```
 npm run dev
 ```
+
+# Infra
+The following branches auto deploy on commit:
+develop -> https://develop.map-maker.dev
+main -> https://map-maker.dev
