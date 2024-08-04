@@ -22,7 +22,7 @@ export default function RootLayout({
         <body>
           <NavBar />
           <main>
-            <div className="container mx-aut text-center m-6">
+            <div className="container m-6 mx-aut text-center">
               {children}
             </div>
           </main>
