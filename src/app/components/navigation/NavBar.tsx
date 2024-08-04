@@ -23,7 +23,7 @@ export default function NavBar() {
     <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
       <Logo />
       <div className="block lg:hidden">
-        <button onClick={toggleNav} className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <button onClick={toggleNav} className={`flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white ${isMobileNavOpen ? "text-white border-white" : ""}`}>
           <svg
             className="fill-current h-3 w-3"
             viewBox="0 0 20 20"
@@ -34,6 +34,7 @@ export default function NavBar() {
           </svg>
         </button>
       </div>
+      { isMobileNavOpen && (
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">
             {navLinks.map((navLink) => {
@@ -44,6 +45,7 @@ export default function NavBar() {
             <AuthButton />
         </div>
       </div>
+      )}
     </nav>
   );
 }
