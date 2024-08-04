@@ -1,13 +1,15 @@
 
-import { getSession } from '@auth0/nextjs-auth0';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
-export default async function AuthButton() {
+export default function AuthButton() {
     let href = '/api/auth/login'
     let text = 'Login'
 
-    const session = await getSession();
+    const { user, error, isLoading } = useUser();
 
-    if(session && session.user) {
+    if (isLoading || error) return (<></>);
+
+    if(user) {
         href = '/api/auth/logout'
         text = 'Logout'
     }
