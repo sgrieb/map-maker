@@ -15,7 +15,6 @@ export default function NavBar() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const toggleNav = () => {
-    console.log('clicking')
     setIsMobileNavOpen(!isMobileNavOpen)
   }
 
