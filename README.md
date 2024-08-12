@@ -13,6 +13,8 @@ To run it:
 npm run dev
 ```
 
+Go to http://localhost:3000
+
 # Infra
 The following branches auto deploy on commit:
 - develop -> https://develop.map-maker.dev
