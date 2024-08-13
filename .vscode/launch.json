@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/src/migrations/01_create_lists_table.js"
+            "program": "${workspaceFolder}/src/db/migrate_latest.js"
         }
     ]
 }

@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "node ./src/db/migrate_latest.js"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.5.0",
