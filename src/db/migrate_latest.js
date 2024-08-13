@@ -1,19 +1,31 @@
 import 'dotenv/config'
+import fs from 'fs'
 
-import * as migrate from './migrations/01_create_lists_table.js'
+const folder = `${process.cwd()}/src/db/migrations`
+let failedFile = null
 
-let hasError = false
+// loop over the files and run each one
+const run = async () => {
+    const files = fs.readdirSync(folder)
+    
+    for(const file of files) {
+        let migration = await import(`${folder}/${file}`)
+        
+        try {
+            await migration.default.migrate()
+        }
+        catch(e) {
+            failedFile = file
+            console.log(`Migration ${file} failed with error: \n${e.toString()}`)
+            break
+        }
+    }
 
-try {
-    await migrate.default.migrate()
+    if(failedFile) {
+        console.log(`Migrations Failed :(`)
+    } else {
+        console.log(`Migrations Completed  Successfully :)`)
+    }
 }
-catch(e) {
-    hasError = true
-    console.log(`Migration X failed with error: \n${e.toString()}`)
-}
 
-if(hasError) {
-    console.log(`Migrations Failed :(`)
-} else {
-    console.log(`Migrations Completed  Successfully :)`)
-}
+await run()
