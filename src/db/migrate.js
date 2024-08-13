@@ -1,8 +1,8 @@
 import 'dotenv/config'
 import fs from 'fs'
 
-let migrationType = null
 const folder = `${process.cwd()}/src/db/migrations`
+let migrationType = null
 let failedFile = null
 let migrationCount = 0
 
