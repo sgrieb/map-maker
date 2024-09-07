@@ -15,7 +15,7 @@ export default async function Page() {
           <input className="input input-bordered w-full max-w-xs" type="text" />
         </label>
           <div className="mt-6">
-            <button className="btn btn-primary">Submit</button>
+            <button className="btn btn-primary">Add</button>
           </div>
       </div>
   );

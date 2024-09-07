@@ -12,7 +12,7 @@ export default async function Page() {
       <article>
           <h1>Lists</h1>
           {rows.length > 0 && 
-            <div>Here's some lists!</div>
+            <div>Here&apos;s some lists!</div>
           }
           {rows.length == 0 && 
             <div>You have no lists!</div>
