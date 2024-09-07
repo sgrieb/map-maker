@@ -24,11 +24,18 @@ export default function NavBar() {
       <div className="navbar bg-base-100">
         <div className="flex-1">
           <a href="/" className="btn btn-ghost text-xl">Map Maker</a>
+          <div className="flex-none">
+          <ul className="menu menu-horizontal px-1">
+              <li>
+                <a href="/lists">Lists</a>
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a href="/lists">Lists</a>
+              <a href="/api/auth/logout">Logout</a>
             </li>
           </ul>
         </div>
