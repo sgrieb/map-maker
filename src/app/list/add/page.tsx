@@ -1,14 +1,15 @@
-export default async function Page() {
-  async function create(formData: FormData) {
-    "use server";
+'use client'
+ 
+import { createList } from '@/app/actions'
 
-    // Logic to mutate data...
-  }
+export default function Page() {
+  const userId = '1234'
+  const createListWithId = createList.bind(null, userId)
 
   return (
     <div>
       <h1>Add a List</h1>
-      <form action={create}>
+      <form action={createListWithId}>
         <label className="m-auto mt-6 form-control w-full max-w-xs">
         <div className="label">
             <span className="label-text">Name</span>
