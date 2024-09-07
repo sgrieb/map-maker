@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import AuthButton from "./AuthButton";
 import NavLink from "./NavLink";
 import Logo from "./Logo";
+import Loader from "../Loader"
 
 const navLinks = [
     { text: 'Profile', href: '/profile' },
@@ -19,25 +20,20 @@ export default function NavBar() {
   }
 
   return (
-    <div className="navbar bg-base-100">
-      <div className="flex-1">
-        <a className="btn btn-ghost text-xl">Map Maker</a>
+    <Suspense fallback={(<Loader />)}>
+      <div className="navbar bg-base-100">
+        <div className="flex-1">
+          <a href="/" className="btn btn-ghost text-xl">Map Maker</a>
+        </div>
+        <div className="flex-none">
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <a href="/lists">Lists</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
-          <li><a>Link</a></li>
-          {/* <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="bg-base-100 rounded-t-none p-2">
-                <li><a>Link 1</a></li>
-                <li><a>Link 2</a></li>
-              </ul>
-            </details>
-          </li> */}
-        </ul>
-      </div>
-    </div>
+    </Suspense>
     // <nav className="flex items-center justify-between flex-wrap p-6">
     //   <Logo />
     //   <div>

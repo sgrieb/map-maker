@@ -22,7 +22,7 @@ export default function RootLayout({
         <body className="h-full">
           <NavBar />
           <main className="h-3/4">
-            <div className="container m-6 mx-auto text-center w-3/4 bg-neutral h-full">
+            <div className="container m-6 mx-auto text-center w-3/4 bg-neutral h-full p-5 rounded-box">
               {children}
             </div>
           </main>
