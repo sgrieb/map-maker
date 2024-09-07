@@ -17,12 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="h-full" lang="en">
       <UserProvider>
-        <body>
+        <body className="h-full">
           <NavBar />
-          <main>
-            <div className="container m-6 mx-aut text-center">
+          <main className="h-3/4">
+            <div className="container m-6 mx-auto text-center w-3/4 bg-neutral h-full">
               {children}
             </div>
           </main>
