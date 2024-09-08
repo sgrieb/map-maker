@@ -35,29 +35,29 @@ export default function Page() {
     <div>
       <h1>Add a List</h1>
       <form action={formAction}>
-        <label className="m-auto mt-6 form-control w-full max-w-xs">
+        <label className="m-auto mt-6 form-control w-full max-w-s">
           <div className="label">
             <span className="label-text">Name</span>
           </div>
           <input
             name="listName"
-            className={`input input-bordered w-full max-w-xs ${errorCss["name"]}`}
+            className={`input input-bordered w-full max-w-s ${errorCss["name"]}`}
             type="text"
           />
         </label>
-        <label className="m-auto mt-6 form-control w-full max-w-xs">
+        <label className="m-auto mt-6 form-control w-full max-w-s">
           <div className="label">
             <span className="label-text">Description</span>
           </div>
           <textarea
             name="listDescription"
-            className={`textarea textarea-bordered w-full max-w-xs ${errorCss["description"]}`}
+            className={`textarea textarea-bordered w-full max-w-s ${errorCss["description"]}`}
           />
         </label>
         <div className="mt-6">
           {errors &&
             Object.keys(errors).map((key) => {
-              return <div role="alert" className="alert alert-error m-auto mt-3 max-w-xs">
+              return <div role="alert" className="alert alert-error m-auto mt-3 max-w-s">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 shrink-0 stroke-current"
