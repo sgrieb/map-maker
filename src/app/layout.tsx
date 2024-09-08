@@ -21,8 +21,8 @@ export default function RootLayout({
       <UserProvider>
         <body className="h-full">
           <NavBar />
-          <main className="h-full">
-            <div className="container text-center bg-neutral h-full w-full rounded-box prose lg:prose-xl p-12 m-auto">
+          <main>
+            <div className="container text-center bg-neutral rounded-box prose lg:prose-xl p-12 m-auto mt-12 mb-12">
               {children}
             </div>
           </main>
