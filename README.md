@@ -8,12 +8,17 @@ This is mostly an excuse to play with Vercel and NextJS.  We'll see where it goe
 - Auth0
 
 # How To's
-To run it:
+
+## Run the client
 ```
 npm run dev
 ```
 
 Go to http://localhost:3000
+
+## Run migrations
+
+`npm run migrate-all`
 
 # Infra
 The following branches auto deploy on commit:

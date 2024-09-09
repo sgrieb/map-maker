@@ -57,7 +57,7 @@ export default function Page() {
         <div className="mt-6">
           {errors &&
             Object.keys(errors).map((key) => {
-              return <div role="alert" className="alert alert-error m-auto mt-3 max-w-s">
+              return <div key={`${key}-alert`} role="alert" className="alert alert-error m-auto mt-3 max-w-s">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 shrink-0 stroke-current"
