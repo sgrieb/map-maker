@@ -1,6 +1,6 @@
 "use client";
 
-import { createList } from "@/app/actions";
+import { createList } from "./actions";
 import { useFormState, useFormStatus } from "react-dom";
 
 export default function Page() {
