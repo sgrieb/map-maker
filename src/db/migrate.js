@@ -12,8 +12,12 @@ if(process.argv.length >= 3) {
 
 // loop over the files and run each one
 const run = async () => {
-    const files = fs.readdirSync(folder)
+    let files = fs.readdirSync(folder)
     
+    if(migrationType !== 'all') {
+        files.reverse()
+    }
+
     for(const file of files) {
         // only run all migrations if specified
         if(migrationType !== 'all' && migrationCount > 0) {
@@ -23,6 +27,7 @@ const run = async () => {
         let migration = await import(`${folder}/${file}`)
         
         try {
+            console.log(`Running ${file}`)
             await migration.default.migrate()
             migrationCount++
         }
