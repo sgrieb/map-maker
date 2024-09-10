@@ -7,15 +7,23 @@ export default function Page() {
   const { pending } = useFormStatus();
   const [state, formAction] = useFormState(createList, new FormData());
 
-  const userId = "1234";
   let errors = null;
   let errorCss: any = {
     description: "",
     name: "",
   };
 
-  // when there are errors, state will be an array
+  // after form submission, state will be an array
   if (Array.isArray(state)) {
+    let successField = state.find((formItem) => {
+      return formItem[0] == "success";
+    });
+
+    if(successField) {
+      // TODO: show a toast and redirect to lists page
+      debugger
+    }
+
     let errorField = state.find((formItem) => {
       return formItem[0] == "errors";
     });
